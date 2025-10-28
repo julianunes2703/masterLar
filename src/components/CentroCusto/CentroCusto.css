@@ -1,0 +1,127 @@
+/* cards de totais */
+.ml-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 8px 0 20px;
+}
+
+.ml-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(11, 30, 58, 0.08);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgba(11, 30, 58, 0.06);
+}
+
+.ml-card--highlight {
+  border: 2px solid #0b1e3a;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+}
+
+.ml-card-title {
+  font-size: 13px;
+  color: #5b6472;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.ml-card-value {
+  font-size: 28px;
+  /*font-weight: 500;*/
+  color: #c21c1c; /* vermelho elegante igual ao seu painel */
+}
+
+/* botões pílula (como na segunda imagem) */
+.ml-pills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ml-pill {
+  border: 1px solid rgba(11, 30, 58, 0.25);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0b1e3a;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.ml-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(11, 30, 58, 0.08);
+}
+
+.ml-pill.active {
+  background: #0b1e3a;
+  color: #fff;
+  border-color: #0b1e3a;
+}
+
+/* gráfico container */
+.ml-chart {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(11, 30, 58, 0.08);
+  padding: 10px 14px;
+  border: 1px solid rgba(11, 30, 58, 0.06);
+  margin-bottom: 24px;
+}
+
+/* tabela */
+.ml-table-wrap { overflow: auto; }
+.ml-table { width: 100%; border-collapse: collapse; }
+.ml-table thead th {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .4px;
+  color: #5b6472; font-weight: 800; padding: 10px 8px; background: #f6f8fb;
+}
+.ml-table tbody td { padding: 10px 8px; border-bottom: 1px solid #eef1f6; }
+.ml-cc-table { margin-top: 18px; }
+.ml-cc-table h3 { margin: 12px 0; font-size: 16px; }
+@media (max-width: 980px) {
+  .ml-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* Accordion header */
+.ml-acc-summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid rgba(11, 30, 58, 0.08);
+  box-shadow: 0 6px 16px rgba(11, 30, 58, 0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 800;
+  color: #0b1e3a;
+}
+
+.ml-acc-title { font-size: 15px; }
+.ml-acc-icon {
+  display: inline-flex;
+  transition: transform .2s ease;
+}
+
+.ml-cc-table.open .ml-acc-icon {
+  transform: rotate(180deg);
+}
+
+.ml-acc-panel {
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid rgba(11, 30, 58, 0.06);
+  border-radius: 12px;
+  padding: 8px 10px;
+  box-shadow: 0 6px 24px rgba(11, 30, 58, 0.06);
+}
+
+/* mantém estilos existentes da tabela */
