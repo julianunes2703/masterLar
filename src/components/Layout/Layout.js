@@ -21,7 +21,8 @@ export default function DashboardLayout() {
 
         
 
-      default: <MasterLarDashboard/>
+      default: 
+      return <MasterLarDashboard/>
          
     }
   };

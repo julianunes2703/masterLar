@@ -5,7 +5,7 @@ import {
 
 import "./CentroCusto.css"
 
-const NAVY = "#0b1e3a";
+const NAVY = "#0b2b5bff";
 const MESES = [6, 7, 8];
 
 const fmtMoney = (n) =>
