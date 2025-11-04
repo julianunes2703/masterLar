@@ -219,10 +219,14 @@ export default function MasterLarDashboard({ topFiliais = 8 }) {
     [mesesEscopo]
   );
   // Meta total (soma mensal das filiais; não depende de mês)
-  const totalMeta = useMemo(
-    () => Object.values(FIXED.metaBasePorFilial || {}).reduce((s, v) => s + Number(v || 0), 0),
-    []
-  );
+  // Meta mensal (soma das filiais)
+const totalMetaMensal = useMemo(
+  () => Object.values(FIXED.metaBasePorFilial || {}).reduce((s, v) => s + Number(v || 0), 0),
+  []
+);
+
+// Meta total geral (3 meses)
+const totalMetaGeral = useMemo(() => totalMetaMensal * 3, [totalMetaMensal]);
 
   // Listas por mês (mostram sempre os meses existentes)
   const faturamentoPorMes = useMemo(
@@ -380,10 +384,14 @@ export default function MasterLarDashboard({ topFiliais = 8 }) {
 
       {/* === CARDS === */}
       <section className="ml-cards">
-        <div className="ml-card">
-          <span className="ml-label">Meta total (mensal, soma das filiais)</span>
-          <strong className="ml-value">{fmtMoney(totalMeta)}</strong>
-        </div>
+                <div className="ml-card">
+                          <span className="ml-label">Meta por mês (mensal, soma das filiais)</span>
+                          <strong className="ml-value">{fmtMoney(totalMetaMensal)}</strong>
+                          <hr style={{ margin: "8px 0", opacity: 0.3 }} />
+                          <span className="ml-label">Meta total geral (Soma de todos os meses)</span>
+                          <strong className="ml-value">{fmtMoney(totalMetaGeral)}</strong>
+              </div>
+
 
         <div className="ml-card">
           <span className="ml-label">
