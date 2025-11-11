@@ -4,6 +4,7 @@ import MasterLarDashboard from "../Filiais/Masterlar";
 
 import "./Layout.css";
 import CentrosDeCusto from "../CentroCusto/CentroCusto";
+import CentroCustoPorFilial from "../CentroCustoFilial/CentroCustoFilial";
 
 
 
@@ -18,6 +19,9 @@ export default function DashboardLayout() {
 
        case "centroCusto":
         return <CentrosDeCusto/>
+
+        case "centroCustoFilial":
+        return  <CentroCustoPorFilial/>
 
         
 
@@ -53,6 +57,14 @@ export default function DashboardLayout() {
             >
               • Centro de Custo
             </li>
+
+            <li
+              className={selectedMenu === "centroCustoFilial" ? "active" : ""}
+              onClick={() => setSelectedMenu("centroCustoFilial")}
+            >
+              • Centro de Custo - Filial
+            </li>
+          
           
           
           </ul>
